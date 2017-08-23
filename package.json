@@ -1,6 +1,6 @@
 {
   "name": "json-for-liquid",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "converts JSON to a string in a way that is easy to parse in liquid templates",
   "main": "lib/parser.js",
   "directories": {
