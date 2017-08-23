@@ -1,0 +1,30 @@
+{
+  "name": "json-for-liquid",
+  "version": "1.0.0",
+  "description": "converts JSON to a string in a way that is easy to parse in liquid templates",
+  "main": "lib/parser.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "compile": "babel -e -d lib/ src/",
+    "prepublish": "npm run compile",
+    "test": "jest"
+  },
+  "keywords": [
+    "json",
+    "liquid",
+    "shopify",
+    "stringify"
+  ],
+  "author": "Dmitriy Nevzorov",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^20.0.3",
+    "babel-preset-env": "^1.6.0",
+    "jest": "^20.0.4",
+    "regenerator-runtime": "^0.11.0"
+  }
+}
