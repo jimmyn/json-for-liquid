@@ -5,7 +5,7 @@ let parser;
 const data = {
   'name': '<discount_name1>',
   'discounts': [{
-    'id': '<discount_id1>',
+    'id': 123456789,
     'name': '<discount_name1>',
     'price': '<discount_price1>',
     'resourceType': '<discount_resource_type1>',
@@ -21,7 +21,7 @@ const data = {
       'value': '<volume_break_value2>'
     }]
   }, {
-    'id': '<discount_id1>',
+    'id': 987654321,
     'name': '<discount_name2>',
     'price': '<discount_price2>',
     'resourceType': '<discount_resource_type2>',
@@ -47,7 +47,7 @@ const schema = {
     items: {
       type: 'object',
       properties: {
-        id: {type: 'string'},
+        id: {type: 'integer'},
         name: {type: 'string'},
         price: {type: 'string'},
         resourceType: {type: 'string'},
@@ -70,7 +70,7 @@ const schema = {
   customerIds: {type: 'string'}
 };
 
-const stringifiedData = '<discount_name1>{0}<discount_id1>{1}<discount_name1>{1}<discount_price1>{1}<discount_resource_type1>{1}<discount_value_type1>{1}<discount_increment1>{1}<volume_break_lowerLimit1>{2}<volume_break_upperLimit1>{2}<volume_break_value1>[1]<volume_break_lowerLimit2>{2}<volume_break_upperLimit2>{2}<volume_break_value2>[0]<discount_id1>{1}<discount_name2>{1}<discount_price2>{1}<discount_resource_type2>{1}<discount_value_type2>{1}<discount_increment2>{1}<volume_break_lowerLimit1>{2}<volume_break_upperLimit1>{2}<volume_break_value1>[1]<volume_break_lowerLimit2>{2}<volume_break_upperLimit2>{2}<volume_break_value2>{0}<customer_ids>';
+const stringifiedData = '<discount_name1>{0}123456789{1}<discount_name1>{1}<discount_price1>{1}<discount_resource_type1>{1}<discount_value_type1>{1}<discount_increment1>{1}<volume_break_lowerLimit1>{2}<volume_break_upperLimit1>{2}<volume_break_value1>[1]<volume_break_lowerLimit2>{2}<volume_break_upperLimit2>{2}<volume_break_value2>[0]987654321{1}<discount_name2>{1}<discount_price2>{1}<discount_resource_type2>{1}<discount_value_type2>{1}<discount_increment2>{1}<volume_break_lowerLimit1>{2}<volume_break_upperLimit1>{2}<volume_break_value1>[1]<volume_break_lowerLimit2>{2}<volume_break_upperLimit2>{2}<volume_break_value2>{0}<customer_ids>';
 
 beforeAll(() => {
   parser = new Parser({schema});

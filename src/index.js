@@ -69,8 +69,6 @@ class Parser {
     let output = Object.keys(properties).map(key => {
       const dataType = properties[key].type;
       switch (dataType) {
-        case 'string':
-          return object[key];
         case 'object':
           return this._stringifyObject(
             object[key],
@@ -83,6 +81,8 @@ class Parser {
             properties[key].items,
             level
           );
+        default:
+          return object[key];
       }
     });
     return output.join(delimiter);
@@ -108,6 +108,9 @@ class Parser {
             properties[key].items,
             level
           );
+          break;
+        case 'integer':
+          result[key] = parseInt(objectArray[i]);
           break;
         default:
           result[key] = objectArray[i];
